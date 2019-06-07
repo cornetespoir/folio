@@ -1,0 +1,414 @@
+<!--
+// [Page]
+   
+   Folio
+ 
+by egg.design //
+ 
+    + basic html and css knowledge is required to customize this page
+    + this code belongs to egg.design. While it is free to use, it is not      free to sell or otherwise redistribute
+    + feel free to edit and custom the theme to your liking, 
+    but don't use as a base, remove the credit, or claim as your own. 
+    + instructions are available throughout the code for easier editing
+    
+Credits
+    + icon fonts from font awesome
+    
+Version 1.00
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Folio</title>
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,7000" rel="stylesheet">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+		   $('#one').click(function(){
+		      $('#one .preview').toggleClass('gallery'); 
+		   });
+		     $('#two').click(function(){
+		      $('#two .preview').toggleClass('gallery'); 
+		   });
+		     $('#three').click(function(){
+		      $('#three .preview').toggleClass('gallery'); 
+		   });
+});
+</script>
+	
+<style>
+
+/* colors */
+
+.category p:hover {
+      background-color: #ffd7e2;
+}
+body {
+    background:#FEF3F6;
+    color:#ed7c8f;
+}
+a {
+    color:#ed7c8f;
+}
+
+.category:active p, .category:active .fa-folder {
+    background-color: #ffd7e2;
+}
+
+
+body {
+    margin:0;
+    font-size:18px;
+    display:flex;
+ align-content:center;
+    font-family:Source Code Pro;
+    flex-wrap:wrap;
+    justify-content:space-around ;
+    align-items:center;
+
+    height:100vh;
+}
+
+
+
+/* custom cursor */
+
+* {
+    cursor:url(https://66.media.tumblr.com/72518de9421160045675e52c920c465c/tumblr_pqwkuheQQH1u8yrhso1_r3_75sq.png), auto;
+}
+
+/* hover cursor */
+a:hover {
+    cursor:url(https://66.media.tumblr.com/f46b031cba2db945b35fa4dade248483/tumblr_pqwkuheQQH1u8yrhso2_r2_75sq.png), pointer;
+}
+
+
+a {
+    text-decoration:none;
+}
+
+header a:hover {
+    background-color: #ffd7e2;
+}
+
+/* cursor for icons */
+
+.fa-folder span {
+        cursor:url(https://66.media.tumblr.com/f46b031cba2db945b35fa4dade248483/tumblr_pqwkuheQQH1u8yrhso2_r2_75sq.png), auto!important;
+}
+
+
+*, :hover {
+    transition:.4s;
+}
+.category {
+    width:25%;
+ 
+    text-align:center;
+}
+.fa-folder {
+    font-size:3.04em;
+   
+     font-weight:bold;
+  
+}
+
+.category p {
+width:70%;
+margin:10px auto;
+}
+
+
+.category:hover .fa-folder:before {
+    content:'\f07c';
+
+}
+
+.preview {
+    width:76%;
+    margin:auto;
+    position:relative;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    opacity:0;
+}
+
+.preview img {
+    width:30%;
+    opacity:0;
+    display:none;
+    height:auto;
+  transition:  0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform:translateY(16px);
+
+}
+
+.category:hover .preview {
+    opacity:1;
+}
+
+  .category:hover img{
+    transform:translateY(-8px);
+opacity:1;
+    
+}
+
+
+.category:hover .preview img:nth-of-type(1) {
+     transition-delay:.4s;
+     transform:rotate(-4deg) translateY(-4px);
+     opacity:1;
+     
+ }
+ 
+ .category:hover  .preview img:nth-of-type(3) {
+      transition-delay:.6s;
+      transform:rotate(6deg) translateY(-4px);
+      opacity:1;
+  } 
+  
+
+
+.preview img:first-of-type, .preview img:nth-of-type(2), .preview img:nth-of-type(3) {
+    display:block;
+}
+
+.preview.gallery img {
+    display:block!important;
+    opacity:1!important;
+    margin:4% 1%;
+    transform:translate(0,0) rotate(0)!important;
+}
+
+.preview.gallery {
+    width:100%!important;
+    position:absolute;
+   padding:0px;
+   justify-content:center;
+    top:0px;
+    margin:60px 0px;
+    left:0px;
+animation:fade 1.6s 1 forwards;
+    height:100vh;
+    opacity:0!important;
+    z-index:999;
+
+}
+
+
+header {
+    width:100%;
+    position:fixed;
+    height:46px;
+   top:0px;
+   justify-content:space-around;
+    display:flex;
+    align-items:center;
+    z-index:9909999;
+    flex-wrap:wrap;
+
+}
+
+header div {
+    justify-self:flex-start;
+    width:calc(20% - 2px);
+    left:0px;
+    margin:0 auto 0 0;
+     align-items:center;
+     justify-content:center;
+    display:flex;
+    height:100%;
+    background:linear-gradient(to right, pink, pink);
+}
+
+
+
+
+header nav {
+    width:80%;
+     align-items:center;
+     justify-content:space-around;
+    flex-wrap:wrap;
+    display:flex;
+}
+section {
+    width:100%;
+    margin:0 auto 20px auto;
+    text-align:center;
+}
+section img {
+    margin:auto;
+    display:block;
+    width:100px;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity:0;
+    }
+    
+    12% {
+        opacity:0;
+    }
+    
+    100% {
+        opacity:1;
+    }
+}
+
+@media screen and (max-width: 42em) {
+
+}
+
+    
+[tooltip] {
+  position: relative;
+  z-index: 9;
+    cursor:url(https://66.media.tumblr.com/f46b031cba2db945b35fa4dade248483/tumblr_pqwkuheQQH1u8yrhso2_r2_75sq.png), auto!important;
+}
+
+/* Hide the title content by default */
+[tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[tooltip]:after {
+  position: absolute;
+  bottom: -150%;
+  left: 50%;
+  margin-bottom: 4px;
+  margin-left: -40px;
+  padding: 6px;
+  font-family:source code pro;
+  width: 80px;
+  background-color: #ffd7e2;
+  color: #ed7c8f;
+  content: attr(tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+[tooltip]:hover:after {
+  visibility: visible;
+  transition:.6s;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}    
+    
+footer {
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    text-align:center;
+    padding:20px;
+}
+
+
+
+		</style>
+	</head>
+	<body>
+	
+	<header>
+	<nav>
+	<a href="/">_home</a>
+	<a href="/ask">_ask</a>
+	<a href="">_archive</a></nav>
+	</header>
+	
+	<!-- icon and description -->
+	<section>
+	<img src="https://66.media.tumblr.com/dfd8c1b46af29c551078fd608e581506/tumblr_pqsry9NZXc1u8yrhso4_r1_250.png">
+	 <p> My portfolio :) </p>
+	</section>
+	
+<!-- first category -->	
+<div id="one" class="category">
+<div class="preview">
+<!-- first 3 preview images -->
+    <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
+    <img src="https://images.unsplash.com/photo-1493673272479-a20888bcee10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+    
+<!-- remaining images, hidden by default -->
+
+    <img src="https://images.unsplash.com/photo-1508014072511-d698c0823383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1864&q=80">
+    <img src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
+    
+    
+</div>
+<!-- folder icon -->
+<div class="far fa-folder" tooltip="click!">
+</div>
+<!-- category name -->
+<p>
+_Plants
+</p>
+</div>
+
+
+<!-- second category --> 
+<div id="two" class="category">	
+<div class="preview">
+<!-- first 3 preview images -->
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1924&q=80">
+    <img src="https://images.unsplash.com/photo-1520720682573-858a3ff754fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1460&q=80">
+    <img src="https://images.unsplash.com/photo-1554365228-f051bbfbcab0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
+    
+    <!-- remaining images, hidden by default -->
+    <img src="https://images.unsplash.com/photo-1546018917-3edc3da1c471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
+    <img src="https://images.unsplash.com/photo-1542233091269-49f3942e1c37?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80">
+    
+    <img src="https://images.unsplash.com/photo-1546018881-134853152037?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"/>
+    
+</div>
+<div class="far fa-folder" tooltip="click!"></div>
+<p>
+<!-- category name -->
+_Fashion
+</p>
+</div>
+
+<!-- third category --> 
+
+<div id="three" class="category">	
+
+<div class="preview">
+<!-- first 3 preview images -->
+    <img src="https://images.unsplash.com/photo-1505899823904-b58e10d5231a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80">
+    <img src="https://images.unsplash.com/photo-1538310402068-2fadf0302514?ixlib=rb-1.2.1&auto=format&fit=crop&w=1930&q=80">
+    <img src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+    
+        <!-- remaining images, hidden by default -->
+    <img src="https://images.unsplash.com/photo-1486819803160-48392e72a940?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+    
+    
+</div>
+<div class="far fa-folder" tooltip="click!"></div>
+<p>
+<!-- category name -->
+_Buildings
+</p>
+</div>
+
+<!-- footer -->
+<footer><a href="https://egg.design">a page by <span class="fas fa-egg"></span></a></footer>
+
+
+	</body>
+</html>
